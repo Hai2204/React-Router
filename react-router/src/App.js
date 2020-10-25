@@ -2,6 +2,7 @@ import React from "react";
 import Home from "./components/Home";
 import About from "./components/About";
 import Profile from "./components/Profile";
+import Time from "./components/Time/Time";
 import "./App.css";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
@@ -22,6 +23,9 @@ function App() {
                 <Link to="/profile">Dashboard</Link>
               </li>
             </ul>
+          </div>
+          <div className="uk-navbar-center">
+              Time:<Time />
           </div>
         </nav>
         <Switch>
