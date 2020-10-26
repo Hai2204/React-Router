@@ -9,11 +9,11 @@
 .test {
   margin: 0 auto;
   /* background: #61dafb; */
-  border: 5px dotted purple;
+  border: 5px solid purple;
   border-radius: 50%;
   height: 100px;
   width: 100px;
-  border-top: 5px dotted rgb(255, 0, 0);
+  border-top: 5px solid rgb(255, 0, 0);
   border-bottom: 5px solid rgb(138, 255, 3);
   border-left: 5px solid rgb(0, 52, 165);
   animation: round 2s linear infinite;
@@ -21,11 +21,9 @@
 @keyframes round {
   0% {
     -webkit-transform: rotate(0deg);
-    opacity: 1;
   }
   100% {
-    -webkit-transform: rotate(360deg);
-    opacity: 0;
+    -webkit-transform:  rotate(360deg);
   }
 }
 .position-test {
@@ -73,8 +71,8 @@
     transform: translateY(-10px);
   }
 }
-.icon{
+.icon {
   right: 10px;
   bottom: 50%;
-  transform: translateY(50%)
+  transform: translateY(50%);
 }

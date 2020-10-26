@@ -1,9 +1,9 @@
-import React, { Component } from "react";
-
+import React, { Component } from 'react';
+import PreviewImage from './PrevImage/PreviewImage'
 class Home extends Component {
   render() {
     return (
-       <div> Home Page</div>
+      <PreviewImage />
     );
   }
 }

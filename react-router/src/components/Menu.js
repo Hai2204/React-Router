@@ -10,7 +10,7 @@ const MenuLink = ({ label, to, activeOnlyWhenExact }) => {
       path={to}
       exact={activeOnlyWhenExact}
       children={({ match }) => {
-        var active = match ? "uk-active" : "uk-hehe";
+        var active = match ? "uk-active" : "";
         return (
           <li className={active}>
             <Link to={to}>

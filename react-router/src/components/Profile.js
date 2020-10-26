@@ -23,13 +23,15 @@ class Profile extends Component {
     });
   };
   onSubmit = (event) => {
+    var err = document.querySelector("#error-message")
     if (
       this.state.name === this.state.username &&
       this.state.pass === this.state.password
     ) {
       alert("login success");
+      err.textContent=""
     } else {
-      alert("username error");
+      err.textContent = "User Name Hoac pass k dung"
     }
     event.preventDefault();
   };
@@ -73,9 +75,9 @@ class Profile extends Component {
           <label className="uk-form-label" htmlFor="password">
             Password
           </label>
-          <div className="uk-form-controls uk-position-relative">
+          <div className="uk-form-controls uk-position-relative uk-visible-toggle" tabIndex="-1">
             <input
-              className="uk-input "
+              className='uk-input'
               id="password"
               type={type}
               onChange={this.oncheckPassword}
@@ -83,10 +85,11 @@ class Profile extends Component {
               placeholder="Nhập mật khẩu"
             ></input>
             <i
-              className="las la-eye uk-position-absolute icon"
+              className="las la-eye uk-position-absolute icon uk-hidden-hover"
               onClick={this.changeIcon}
             ></i>
           </div>
+          <p className="uk-text-danger" id="error-message"></p>
         </div>
         <button
           className={
