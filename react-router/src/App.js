@@ -2,32 +2,23 @@ import React from "react";
 import Home from "./components/Home";
 import About from "./components/About";
 import Profile from "./components/Profile";
-import Time from "./components/Time/Time";
+import NotFound from "./components/NotFound"
 import "./App.css";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+} from "react-router-dom";
+import Menu from "./components/Menu";
+
+
 
 function App() {
   return (
     <Router>
       <div>
-        <nav className="uk-navbar-container" uk-navbar="true">
-          <div className="uk-navbar-left">
-            <ul className="uk-navbar-nav">
-              <li className="uk-active">
-                <Link to="/">Home</Link>
-              </li>
-              <li>
-                <Link to="/about">About</Link>
-              </li>
-              <li>
-                <Link to="/profile">Dashboard</Link>
-              </li>
-            </ul>
-          </div>
-          <div className="uk-navbar-center">
-              Time:<Time />
-          </div>
-        </nav>
+        <Menu />
+        {/* nội dung route */}
         <Switch>
           <Route exact path="/">
             <Home />
@@ -36,6 +27,7 @@ function App() {
           <Router path="/profile">
             <Profile />
           </Router>
+          <Route component={NotFound} />
         </Switch>
       </div>
     </Router>

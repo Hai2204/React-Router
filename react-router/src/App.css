@@ -2,37 +2,79 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.border-0 {
+  outline: none;
+  border: 1px solid purple;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.test {
+  margin: 0 auto;
+  /* background: #61dafb; */
+  border: 5px dotted purple;
+  border-radius: 50%;
+  height: 100px;
+  width: 100px;
+  border-top: 5px dotted rgb(255, 0, 0);
+  border-bottom: 5px solid rgb(138, 255, 3);
+  border-left: 5px solid rgb(0, 52, 165);
+  animation: round 2s linear infinite;
+}
+@keyframes round {
+  0% {
+    -webkit-transform: rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    opacity: 0;
   }
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.position-test {
+  padding: 20px;
+  border-radius: 2px;
+  color: purple;
+  right: 10px;
+  top: 30px;
+  background: rgb(208, 241, 60);
 }
-
-.App-link {
-  color: #61dafb;
+.position-test1 {
+  padding: 10px;
+  border-radius: 2px;
+  color: purple;
+  right: 40px;
+  top: 450px;
+  background: rgb(208, 241, 60);
+  animation: ar-up 3s ease-in-out infinite;
 }
+/* 1 */
+.gear-round {
+  animation: gear 3s linear infinite;
+}
+.gear-round:hover {
+  animation: gear 0.8s linear infinite;
+}
+/* 2 */
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@keyframes gear {
+  0% {
+    -webkit-transform: rotate(0deg);
   }
-  to {
-    transform: rotate(360deg);
+  100% {
+    -webkit-transform: rotate(360deg);
   }
+}
+@keyframes ar-up {
+  0% {
+    transform: translateY(-10px);
+  }
+  50% {
+    transform: translateY(20px);
+  }
+  100% {
+    transform: translateY(-10px);
+  }
+}
+.icon{
+  right: 10px;
+  bottom: 50%;
+  transform: translateY(50%)
 }

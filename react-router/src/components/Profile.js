@@ -1,39 +1,103 @@
 import React, { Component } from "react";
+import "../App.css";
 
 class Profile extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      type: "Password",
       name: "",
-      username: "123",
+      pass: "",
+      username: "vanhai",
+      password: "123",
     };
   }
   onChange = (event) => {
     this.setState({
       name: event.target.value,
-    })
+    });
+  };
+  oncheckPassword = (event) => {
+    this.setState({
+      pass: event.target.value,
+    });
   };
   onSubmit = (event) => {
-    if (this.state.name === this.state.username) {
-      alert('login success')
+    if (
+      this.state.name === this.state.username &&
+      this.state.pass === this.state.password
+    ) {
+      alert("login success");
     } else {
-      alert('username error')
+      alert("username error");
     }
     event.preventDefault();
-  }
+  };
+  changeIcon = (e) => {
+    e.target.classList.toggle("la-low-vision");
+    if (this.state.type === "Password") {
+      this.setState({
+        type: "Text",
+      });
+    }
+    if (this.state.type === "Text") {
+      this.setState({
+        type: "Password",
+      });
+    }
+  };
+
   render() {
-    const { name } = this.state;
+    const { name, pass, type } = this.state;
     return (
-      <form className="uk-text-center uk-margin" onSubmit={this.onSubmit}>
-        <div className="uk-flex-inline">
-          <input
-            type="text"
-            onChange={this.onChange}
-            // value={name}
-            defaultValue={name}
-          ></input>
-          <button className={this.state.name !== '' ? 'uk-button uk-button-primary' : 'uk-disabled uk-button'} type="submit">check</button>
+      <form
+        className="uk-text-center uk-form-horizontal uk-margin uk-width-1-2 uk-align-center"
+        onSubmit={this.onSubmit}
+      >
+        <div className="uk-margin">
+          <label className="uk-form-label" htmlFor="username">
+            Username
+          </label>
+          <div className="uk-form-controls">
+            <input
+              className="uk-input"
+              id="username"
+              type="text"
+              onChange={this.onChange}
+              defaultValue={name}
+              placeholder="Họ Tên Bạn"
+            ></input>
+          </div>
         </div>
+        <div className="uk-margin">
+          <label className="uk-form-label" htmlFor="password">
+            Password
+          </label>
+          <div className="uk-form-controls uk-position-relative">
+            <input
+              className="uk-input "
+              id="password"
+              type={type}
+              onChange={this.oncheckPassword}
+              defaultValue={pass}
+              placeholder="Nhập mật khẩu"
+            ></input>
+            <i
+              className="las la-eye uk-position-absolute icon"
+              onClick={this.changeIcon}
+            ></i>
+          </div>
+        </div>
+        <button
+          className={
+            this.state.name && this.state.pass !== ""
+              ? "uk-button uk-button-primary"
+              : "uk-disabled uk-button"
+          }
+          type="submit"
+        >
+          Login
+        </button>
       </form>
     );
   }
