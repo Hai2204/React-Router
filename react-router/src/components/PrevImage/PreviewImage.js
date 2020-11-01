@@ -8,7 +8,7 @@ var Image_Upload_Preview = function (file_input, image_element) {
    */
   this.is_supported = function () {
     if (!FileReader instanceof Function) {
-      console.error(":( Your browser noes not support the FileReader...");
+      // console.error(":( Your browser noes not support the FileReader...");
       return false;
     }
   };
