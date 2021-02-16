@@ -16,18 +16,13 @@
   border-top: 5px solid rgb(255, 255, 255);
   /* border-bottom: 5px solid rgb(138, 255, 3); */
   /* border-left: 5px solid rgb(0, 52, 165); */
-  animation: round 2s linear infinite;
+  animation: round 1s linear infinite;
 }
 @keyframes round {
   0% {
     -webkit-transform: rotate(0deg);
   }
-  50% {
-    -webkit-transform: rotate(90deg);
-  }
-  70% {
-    -webkit-transform: rotate(300eg);
-  }
+
   100% {
     -webkit-transform:  rotate(360deg);
   }

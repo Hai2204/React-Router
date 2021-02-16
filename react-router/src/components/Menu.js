@@ -66,7 +66,7 @@ class Menu extends Component {
   };
   render() {
     return (
-      <nav className="uk-navbar-container" uk-navbar="true">
+      <nav className="uk-navbar-container uk-position-relative" uk-navbar="true">
         <div className="uk-navbar-left">
           <ul className="uk-navbar-nav">{this.showMenu(menus)}</ul>
         </div>

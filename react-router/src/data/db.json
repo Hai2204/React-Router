@@ -1,0 +1,6 @@
+{
+  "users": [
+    { "id": 1, "Name": "Nguyễn Văn Hải", "Age": 22 },
+    { "id": 2, "Name": "Nguyễn Văn Anh", "Age": 26 }
+  ]
+}

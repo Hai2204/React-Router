@@ -102,8 +102,8 @@ class PreviewImage extends Component {
     return (
       <div className="uk-text-center uk-margin-large">
         <div uk-form-custom="true">
-          <input type="file" multiple={true}></input>
-          <img type="file" className="uk-margin uk-border-rounded" id="img-avatar" alt="Avatar" width="200" height="100"></img>
+          <input type="file"></input>
+          <img type="file" className="uk-margin uk-border-rounded" id="img-avatar" alt="Avatar" width="300" height="100"></img>
           <div>
             <button
               className="uk-button uk-button-small uk-button-primary uk-margin uk-border-rounded "

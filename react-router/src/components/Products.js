@@ -28,7 +28,7 @@ class Products extends Component {
     var url = match.url
     var result = products.map((product, index) => {
       return (
-        <NavLink to={`${url}/${product.slug}`} key={index}>
+        <NavLink className="uk-link uk-link-reset" to={`${url}/${product.slug}`} key={index}>
           <div className="uk-padding uk-list-collapse" >
             <div className="uk-card uk-card-secondary uk-card-body">
               <p>{product.id}</p>
@@ -39,6 +39,8 @@ class Products extends Component {
         </NavLink>
       );
     });
+    var {location} = this.props;
+    console.log(location);
     return (
       <div className="uk-text-center uk-margin uk-section uk-container">
         <h1>Page Product</h1>
@@ -46,7 +48,7 @@ class Products extends Component {
           {result}
         </div>
         <div className="uk-child-width-1-3 " uk-grid="true">
-            <Route path="/products/:slug" component={Product}/>
+            <Route  path="/products/:slug" component={Product}/>
         </div>
       </div>
     );

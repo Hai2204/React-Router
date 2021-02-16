@@ -19,12 +19,12 @@ const routes = [
   {
     path: "/profile",
     exact: false,
-    main: () => <Profile />,
+    main: ({location}) => <Profile location={location} />,
   },
   {
     path: "/products",
     exact: false,
-    main: ({match}) => <Products match={match}/>,
+    main: ({match,location}) => <Products match={match} location={location} />,
   },
   {
     path: "/prompt",
